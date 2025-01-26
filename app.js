@@ -9,7 +9,7 @@ connectDB()
 
 app.use(cors())
 app.use(express.json())
-app.use('api/tournaments', tournamentRoutes)
+app.use('/api/tournaments', tournamentRoutes)
 
 
 app.listen(PORT, () => console.log(`Rodando servidor na poorta ${PORT}`))

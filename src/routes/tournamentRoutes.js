@@ -5,7 +5,6 @@ const Tournament = require('../models/Tournaments')
 router.get('/', async (req, res) => {
     try {
         const tournaments = await Tournament.find()
-        console.log('Torneios no banco:', tournaments)
         res.json(tournaments)
     } catch (err) {
         res.status(500).json({ message: err.message })

@@ -26,4 +26,20 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.delete('/', async (req, red) => {
+    try {
+        const { id } = req.params
+        const result = await Tournament.findByIdNadDelete(id)
+
+        if (result) {
+            res.status(200).json({ message: 'Torneio deletado com Sucesso!' })
+        } else {
+            res.status(404).json({ message: 'Torneio ncao encontrado' })
+        }
+    } catch (error) {
+        console.error('Erro ao deletar o torneio: ', error)
+        res.status(500).json({ message: 'Erro no servidor.' })
+    }
+})
+
 module.exports = router

@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.delete('/', async (req, red) => {
+router.delete('/', async (req, res) => {
     try {
         const { id } = req.params
         const result = await Tournament.findByIdNadDelete(id)
